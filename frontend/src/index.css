@@ -327,7 +327,27 @@ body {
 }
 
 /* ── Global Responsive ── */
-@media (max-width: 1024px) {
+
+/* XXL – 1400px+ & XL – 1200–1399px */
+@media (min-width: 1200px) {
+  .section {
+    padding: 100px 0;
+  }
+}
+
+/* LG – 992–1199px */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .section {
+    padding: 90px 0;
+  }
+
+  .section-header {
+    margin-bottom: 60px;
+  }
+}
+
+/* MD – 768–991px */
+@media (max-width: 991px) and (min-width: 768px) {
   .section {
     padding: 80px 0;
   }
@@ -335,11 +355,16 @@ body {
   .section-header {
     margin-bottom: 50px;
   }
+
+  .container {
+    padding: 0 20px;
+  }
 }
 
-@media (max-width: 768px) {
+/* SM – 480–767px */
+@media (max-width: 767px) and (min-width: 480px) {
   .section {
-    padding: 60px 0;
+    padding: 70px 0;
   }
 
   .section-header {
@@ -352,14 +377,19 @@ body {
 
   .btn-primary,
   .btn-outline {
-    padding: 11px 20px;
+    padding: 12px 24px;
     font-size: 13px;
   }
 }
 
-@media (max-width: 480px) {
+/* XS – 0–479px */
+@media (max-width: 479px) {
   .section {
-    padding: 48px 0;
+    padding: 60px 0;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
   }
 
   .section-tag {
@@ -369,5 +399,15 @@ body {
 
   .container {
     padding: 0 14px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 11px 20px;
+    font-size: 12px;
+  }
+
+  .glass-card {
+    border-radius: var(--radius-md);
   }
 }

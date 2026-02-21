@@ -407,42 +407,152 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 1100px) {
+
+/* XXL – 1400px+ */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1360px;
+    }
+
+    .hero-avatar-wrap {
+        width: 440px;
+        height: 440px;
+    }
+
+    .avatar-ring-outer {
+        width: 320px;
+        height: 320px;
+    }
+
+    .avatar-ring-inner {
+        width: 300px;
+        height: 300px;
+    }
+
+    .avatar-circle {
+        width: 260px;
+        height: 260px;
+    }
+}
+
+/* XL – 1200–1399px */
+@media (max-width: 1399px) and (min-width: 1200px) {
+    .hero-avatar-wrap {
+        width: 400px;
+        height: 400px;
+    }
+
+    .avatar-ring-outer {
+        width: 300px;
+        height: 300px;
+    }
+
+    .avatar-ring-inner {
+        width: 284px;
+        height: 284px;
+    }
+
+    .avatar-circle {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* LG – 992–1199px */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .hero-avatar-wrap {
+        width: 340px;
+        height: 340px;
+    }
+
+    .avatar-ring-outer {
+        width: 250px;
+        height: 250px;
+    }
+
+    .avatar-ring-inner {
+        width: 236px;
+        height: 236px;
+    }
+
+    .avatar-circle {
+        width: 206px;
+        height: 206px;
+    }
+
+    .float-card-left {
+        left: -60px;
+    }
+
+    .float-card-right {
+        right: -60px;
+    }
+}
+
+/* MD – 768–991px */
+@media (max-width: 991px) and (min-width: 768px) {
+    .hero-inner {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 50px;
+        padding-top: 20px;
+    }
+
+    .hero-content {
+        align-items: center;
+    }
+
+    .hero-description {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-actions,
+    .hero-socials {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+        gap: 24px;
+    }
+
     .hero-avatar-wrap {
         width: 300px;
         height: 300px;
     }
 
     .avatar-ring-outer {
-        width: 230px;
-        height: 230px;
+        width: 240px;
+        height: 240px;
     }
 
     .avatar-ring-inner {
-        width: 216px;
-        height: 216px;
+        width: 226px;
+        height: 226px;
     }
 
     .avatar-circle {
-        width: 190px;
-        height: 190px;
+        width: 198px;
+        height: 198px;
     }
 
-    .float-card-left {
-        left: -55px;
-    }
-
-    .float-card-right {
-        right: -55px;
+    .float-card {
+        display: none;
     }
 }
 
-@media (max-width: 900px) {
+/* SM – 480–767px */
+@media (max-width: 767px) and (min-width: 480px) {
+    .hero-section {
+        padding: 90px 0 60px;
+    }
+
     .hero-inner {
         flex-direction: column-reverse;
         text-align: center;
         gap: 40px;
-        padding-top: 20px;
+        padding-top: 10px;
     }
 
     .hero-content {
@@ -489,60 +599,80 @@
     }
 }
 
-@media (max-width: 600px) {
+/* XS – 0–479px */
+@media (max-width: 479px) {
     .hero-section {
-        padding: 90px 0 50px;
+        padding: 85px 0 50px;
     }
 
-    .hero-avatar-wrap {
-        width: 210px;
-        height: 210px;
+    .hero-inner {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 36px;
     }
 
-    .avatar-ring-outer {
-        width: 170px;
-        height: 170px;
+    .hero-content {
+        align-items: center;
     }
 
-    .avatar-ring-inner {
-        width: 158px;
-        height: 158px;
-    }
-
-    .avatar-circle {
-        width: 138px;
-        height: 138px;
-    }
-
-    .avatar-initials {
-        font-size: 2.5rem;
-    }
-
-    .orbit-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-    }
-
-    .hero-stats {
-        gap: 16px;
-    }
-}
-
-@media (max-width: 400px) {
     .hero-name {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
+    }
+
+    .hero-description {
+        text-align: center;
+        max-width: 100%;
     }
 
     .hero-actions {
         flex-direction: column;
         align-items: center;
         width: 100%;
+        gap: 12px;
     }
 
     .btn-primary,
     .btn-outline {
         width: 100%;
         justify-content: center;
+    }
+
+    .hero-socials {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .hero-stats {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .hero-avatar-wrap {
+        width: 220px;
+        height: 220px;
+    }
+
+    .avatar-ring-outer {
+        width: 180px;
+        height: 180px;
+    }
+
+    .avatar-ring-inner {
+        width: 168px;
+        height: 168px;
+    }
+
+    .avatar-circle {
+        width: 148px;
+        height: 148px;
+    }
+
+    .orbit-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .float-card {
+        display: none;
     }
 }

@@ -5,6 +5,7 @@ import './Hero.css';
 import { FiGithub, FiLinkedin, FiMail, FiPhone, FiArrowDown, FiZap, FiCpu } from 'react-icons/fi';
 import { SiLeetcode, SiFlutter } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
+import profileImg from '../assets/Profile.png';
 
 const roles = personalInfo.roles;
 
@@ -13,21 +14,6 @@ export default function Hero() {
     const [displayText, setDisplayText] = React.useState('');
     const [isDeleting, setIsDeleting] = React.useState(false);
     const [charIndex, setCharIndex] = React.useState(0);
-    const [profileImg, setProfileImg] = React.useState(null);
-
-    // Load profile image from localStorage (shared with About section)
-    React.useEffect(() => {
-        const saved = localStorage.getItem('profile_image');
-        if (saved) setProfileImg(saved);
-        const onStorage = () => {
-            const updated = localStorage.getItem('profile_image');
-            setProfileImg(updated || null);
-        };
-        window.addEventListener('storage', onStorage);
-        // Poll every 2s in case About uploads it in same tab
-        const interval = setInterval(onStorage, 2000);
-        return () => { window.removeEventListener('storage', onStorage); clearInterval(interval); };
-    }, []);
 
     // Typing animation
     React.useEffect(() => {
@@ -144,11 +130,7 @@ export default function Hero() {
                         <div className="avatar-ring-outer">
                             <div className="avatar-ring-inner">
                                 <div className="avatar-circle">
-                                    {profileImg ? (
-                                        <img src={profileImg} alt="Praveen K" className="avatar-photo" />
-                                    ) : (
-                                        <span className="avatar-initials">PK</span>
-                                    )}
+                                    <img src={profileImg} alt="Praveen K" className="avatar-photo" />
                                     <div className="avatar-glow" />
                                 </div>
                             </div>

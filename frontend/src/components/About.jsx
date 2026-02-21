@@ -1,59 +1,14 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { personalInfo } from '../data/portfolioData';
 import './About.css';
-import { FiArrowRight, FiCamera, FiUpload, FiMapPin, FiMail, FiCode, FiAward } from 'react-icons/fi';
+import { FiArrowRight, FiMapPin, FiMail, FiCode, FiAward } from 'react-icons/fi';
 import { SiLeetcode } from 'react-icons/si';
-
-const BACKEND_URL = 'http://localhost:8080';
+import profileImg from '../assets/Profile.png';
 
 export default function About() {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
-    const [profileImg, setProfileImg] = useState(null);
-    const [uploading, setUploading] = useState(false);
-    const fileRef = useRef();
-
-    // Load saved image on mount
-    React.useEffect(() => {
-        const saved = localStorage.getItem('profile_image');
-        if (saved) setProfileImg(saved);
-    }, []);
-
-    const handleImageUpload = async (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-        setUploading(true);
-
-        // Preview locally immediately
-        const reader = new FileReader();
-        reader.onload = (ev) => {
-            const dataUrl = ev.target.result;
-            setProfileImg(dataUrl);
-            localStorage.setItem('profile_image', dataUrl);
-        };
-        reader.readAsDataURL(file);
-
-        // Try backend upload
-        try {
-            const formData = new FormData();
-            formData.append('file', file);
-            const res = await fetch(`${BACKEND_URL}/api/upload/profile-image`, {
-                method: 'POST',
-                body: formData,
-            });
-            if (res.ok) {
-                const data = await res.json();
-                if (data.data?.url) {
-                    setProfileImg(`${BACKEND_URL}${data.data.url}`);
-                    localStorage.setItem('profile_image', `${BACKEND_URL}${data.data.url}`);
-                }
-            }
-        } catch {
-            // Backend not running — local preview is fine
-        }
-        setUploading(false);
-    };
 
     const cardVariants = {
         hidden: { opacity: 0, y: 30 },
@@ -96,38 +51,8 @@ export default function About() {
                             {/* Image section */}
                             <div className="profile-img-section">
                                 <div className="profile-img-ring">
-                                    {profileImg ? (
-                                        <img src={profileImg} alt="Praveen K" className="profile-img" />
-                                    ) : (
-                                        <div className="profile-img-placeholder">
-                                            <span className="profile-initials-big">PK</span>
-                                        </div>
-                                    )}
-                                    <div className="profile-img-overlay" onClick={() => fileRef.current.click()}>
-                                        {uploading ? (
-                                            <div className="spinner-sm" />
-                                        ) : (
-                                            <>
-                                                <FiCamera size={22} />
-                                                <span>Upload Photo</span>
-                                            </>
-                                        )}
-                                    </div>
+                                    <img src={profileImg} alt="Praveen K" className="profile-img" />
                                 </div>
-                                <input
-                                    ref={fileRef}
-                                    type="file"
-                                    accept="image/*"
-                                    style={{ display: 'none' }}
-                                    onChange={handleImageUpload}
-                                />
-                                <button
-                                    className="upload-btn"
-                                    onClick={() => fileRef.current.click()}
-                                >
-                                    <FiUpload size={13} />
-                                    <span>{profileImg ? 'Change Photo' : 'Upload Photo'}</span>
-                                </button>
                             </div>
 
                             {/* Name & Title */}
@@ -156,7 +81,7 @@ export default function About() {
                             {/* Status */}
                             <div className="profile-status">
                                 <span className="status-pulse" />
-                                <span>Open to Internships & Projects</span>
+                                <span>Open to Internships &amp; Projects</span>
                             </div>
                         </div>
                     </motion.div>
@@ -189,7 +114,7 @@ export default function About() {
                             animate={inView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.6, delay: 0.4 }}
                         >
-                            I specialize in <span className="hl">Flutter & Dart</span> for mobile development and have a solid foundation in <span className="hl">Java and OOP principles</span>. I've competed in hackathons, earned university recognition, and solved <span className="hl">260+ DSA problems</span> on LeetCode.
+                            I specialize in <span className="hl">Flutter &amp; Dart</span> for mobile development and have a solid foundation in <span className="hl">Java and OOP principles</span>. I've competed in hackathons, earned university recognition, and solved <span className="hl">260+ DSA problems</span> on LeetCode.
                         </motion.p>
 
                         <motion.p

@@ -1,18 +1,19 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { achievements, certifications, softSkills, languages } from '../data/portfolioData';
 import { personalInfo } from '../data/portfolioData';
 import './Achievements.css';
 import {
-    FiUpload, FiCamera, FiX, FiExternalLink,
+    FiExternalLink,
     FiZap, FiCode, FiMessageCircle, FiUsers,
-    FiClock, FiSearch, FiGlobe, FiPieChart,
-    FiAward, FiFileText, FiSmartphone, FiTarget
+    FiClock, FiSearch, FiGlobe,
+    FiAward, FiFileText
 } from 'react-icons/fi';
 import { FaTrophy, FaJava } from 'react-icons/fa';
 import { SiLeetcode, SiFlutter, SiDart } from 'react-icons/si';
-import { HiOutlineLightBulb, HiOutlineAcademicCap } from 'react-icons/hi';
+import { HiOutlineLightBulb } from 'react-icons/hi';
+import univRankImg from '../assets/univ_rank.png';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -46,61 +47,17 @@ function SoftSkillIconC({ idx }) {
     return null;
 }
 
-// ── Award Photo Upload ──
-function AwardPhotoSlot({ achievementId }) {
-    const [photo, setPhoto] = useState(() => localStorage.getItem(`award_photo_${achievementId}`) || null);
-    const [hovering, setHovering] = useState(false);
-    const fileRef = useRef();
-
-    const handleUpload = (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-        const reader = new FileReader();
-        reader.onload = (ev) => {
-            setPhoto(ev.target.result);
-            localStorage.setItem(`award_photo_${achievementId}`, ev.target.result);
-        };
-        reader.readAsDataURL(file);
-    };
-
-    const handleRemove = (e) => {
-        e.stopPropagation();
-        setPhoto(null);
-        localStorage.removeItem(`award_photo_${achievementId}`);
-    };
-
+// ── Static Award Photo (univ_rank) ──
+function UnivRankPhoto() {
     return (
         <div className="award-photo-slot">
-            <input ref={fileRef} type="file" accept="image/*"
-                style={{ display: 'none' }} onChange={handleUpload} />
-
-            {photo ? (
-                <div
-                    className="award-photo-preview"
-                    onMouseEnter={() => setHovering(true)}
-                    onMouseLeave={() => setHovering(false)}
-                    onClick={() => fileRef.current.click()}
-                >
-                    <img src={photo} alt="Award" className="award-img" />
-                    {hovering && (
-                        <div className="award-photo-overlay">
-                            <FiCamera size={20} />
-                            <span>Change Photo</span>
-                        </div>
-                    )}
-                    <button className="award-remove-btn" onClick={handleRemove} title="Remove">
-                        <FiX size={12} />
-                    </button>
+            <div className="award-photo-preview award-photo-static">
+                <img src={univRankImg} alt="University 3rd Rank Award" className="award-img" />
+                <div className="award-static-badge">
+                    <FaTrophy size={12} color="#f59e0b" />
+                    <span>University 3rd Rank Certificate</span>
                 </div>
-            ) : (
-                <motion.div className="award-upload-empty"
-                    onClick={() => fileRef.current.click()}
-                    whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
-                    <div className="award-upload-icon"><FiUpload size={22} /></div>
-                    <p className="award-upload-title">Add Award Photo</p>
-                    <p className="award-upload-sub">Click to upload your rank certificate or award photo</p>
-                </motion.div>
-            )}
+            </div>
         </div>
     );
 }
@@ -156,7 +113,7 @@ export default function Achievements() {
                                         </a>
                                     )}
 
-                                    {ach.hasAwardPhoto && <AwardPhotoSlot achievementId={ach.id} />}
+                                    {ach.id === 'university-rank' && <UnivRankPhoto />}
                                 </motion.div>
                             ))}
                         </div>

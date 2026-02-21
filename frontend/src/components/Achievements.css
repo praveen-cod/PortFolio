@@ -104,115 +104,47 @@
     transform: translateX(3px);
 }
 
-/* ── Award Photo Slot ── */
+/* ── Static Award Photo (Univ Rank) ── */
 .award-photo-slot {
     margin-top: 4px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 14px;
 }
 
-/* Empty upload state */
-.award-upload-empty {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 18px;
-    border: 2px dashed rgba(245, 158, 11, 0.3);
-    border-radius: 12px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.3s;
-    background: rgba(245, 158, 11, 0.03);
-}
-
-.award-upload-empty:hover {
-    border-color: rgba(245, 158, 11, 0.6);
-    background: rgba(245, 158, 11, 0.07);
-}
-
-.award-upload-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(245, 158, 11, 0.12);
-    border: 1px solid rgba(245, 158, 11, 0.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #f59e0b;
-}
-
-.award-upload-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: #f59e0b;
-}
-
-.award-upload-sub {
-    font-size: 11px;
-    color: #64748b;
-    line-height: 1.5;
-    max-width: 240px;
-}
-
-/* Filled photo state */
-.award-photo-preview {
+.award-photo-static {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    cursor: pointer;
     height: 240px;
     border: 2px solid rgba(245, 158, 11, 0.35);
+    background: rgba(245, 158, 11, 0.05);
 }
 
 .award-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
     transition: transform 0.4s;
 }
 
-.award-photo-preview:hover .award-img {
+.award-photo-static:hover .award-img {
     transform: scale(1.04);
 }
 
-.award-photo-overlay {
+.award-static-badge {
     position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 20px 12px 12px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 5px;
-    color: white;
-    font-size: 12px;
+    gap: 6px;
+    color: #f1f5f9;
+    font-size: 13px;
     font-weight: 600;
-}
-
-.award-remove-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 24px;
-    height: 24px;
-    background: rgba(239, 68, 68, 0.85);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.2s;
-}
-
-.award-remove-btn:hover {
-    background: #ef4444;
-    transform: scale(1.15);
 }
 
 /* ── Cert Cards ── */
@@ -332,40 +264,113 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 1000px) {
+
+/* XXL – 1400px+ */
+@media (min-width: 1400px) {
+    .ach-grid-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .ach-bottom {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+}
+
+/* XL – 1200–1399px */
+@media (max-width: 1399px) and (min-width: 1200px) {
+
+    .ach-grid-main,
+    .ach-bottom {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+/* LG – 992–1199px */
+@media (max-width: 1199px) and (min-width: 992px) {
+
+    .ach-grid-main,
+    .ach-bottom {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+/* MD – 768–991px */
+@media (max-width: 991px) and (min-width: 768px) {
+    .ach-grid-main {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .cert-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ach-bottom {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+}
+
+/* SM – 480–767px */
+@media (max-width: 767px) and (min-width: 480px) {
     .ach-grid-main {
         grid-template-columns: 1fr;
         gap: 28px;
+    }
+
+    .cert-grid {
+        grid-template-columns: 1fr;
+        /* Stack certs on small mobiles */
     }
 
     .ach-bottom {
         grid-template-columns: 1fr;
         gap: 28px;
     }
+
+    .award-photo-static {
+        height: 200px;
+    }
 }
 
-@media (max-width: 600px) {
+/* XS – 0–479px */
+@media (max-width: 479px) {
+    .ach-grid-main {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
     .cert-grid {
         grid-template-columns: 1fr;
     }
 
-    .soft-skill-name {
-        min-width: 90px;
+    .ach-bottom {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .award-photo-static {
+        height: 180px;
+    }
+
+    .ach-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 1.2rem;
     }
 
     .ach-card-top {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
     }
 
-    .award-photo-preview {
-        height: 190px;
-    }
-}
-
-@media (max-width: 400px) {
-    .ach-icon {
-        width: 42px;
-        height: 42px;
-        font-size: 1.2rem;
+    .soft-skill-name {
+        min-width: 90px;
     }
 }

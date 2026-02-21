@@ -38,7 +38,7 @@
     position: relative;
     width: 160px;
     height: 160px;
-    cursor: pointer;
+    cursor: default;
 }
 
 .profile-img-ring::before {
@@ -81,59 +81,7 @@
     background-clip: text;
 }
 
-.profile-img-overlay {
-    position: absolute;
-    inset: 4px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    z-index: 2;
-    color: white;
-    font-size: 12px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.profile-img-ring:hover .profile-img-overlay {
-    opacity: 1;
-}
-
-.upload-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 16px;
-    background: rgba(124, 58, 237, 0.15);
-    border: 1px solid rgba(124, 58, 237, 0.4);
-    border-radius: 50px;
-    color: #a78bfa;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-family: 'Inter', sans-serif;
-}
-
-.upload-btn:hover {
-    background: rgba(124, 58, 237, 0.3);
-    border-color: #7c3aed;
-    transform: translateY(-1px);
-}
-
-.spinner-sm {
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-top-color: white;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-}
+/* Upload overlay & button removed — static image only */
 
 /* Name block */
 .profile-name-block {
@@ -322,17 +270,55 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 1100px) {
+
+/* XXL – 1400px+ */
+@media (min-width: 1400px) {
+    .about-layout {
+        grid-template-columns: 380px 1fr;
+        gap: 70px;
+    }
+}
+
+/* XL – 1200–1399px */
+@media (max-width: 1399px) and (min-width: 1200px) {
+    .about-layout {
+        grid-template-columns: 360px 1fr;
+        gap: 56px;
+    }
+}
+
+/* LG – 992–1199px */
+@media (max-width: 1199px) and (min-width: 992px) {
     .about-layout {
         grid-template-columns: 300px 1fr;
         gap: 36px;
     }
 }
 
-@media (max-width: 860px) {
+/* MD – 768–991px */
+@media (max-width: 991px) and (min-width: 768px) {
     .about-layout {
         grid-template-columns: 1fr;
-        gap: 36px;
+        gap: 32px;
+    }
+
+    .profile-card {
+        position: static;
+        max-width: 420px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .info-cards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* SM – 480–767px */
+@media (max-width: 767px) and (min-width: 480px) {
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
     }
 
     .profile-card {
@@ -341,9 +327,40 @@
         margin: 0 auto;
         width: 100%;
     }
+
+    .info-cards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-actions {
+        flex-wrap: wrap;
+    }
 }
 
-@media (max-width: 520px) {
+/* XS – 0–479px */
+@media (max-width: 479px) {
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .profile-card {
+        position: static;
+        max-width: 100%;
+        margin: 0 auto;
+        width: 100%;
+        padding: 20px 16px;
+    }
+
+    .profile-img-ring {
+        width: 130px;
+        height: 130px;
+    }
+
+    .profile-initials-big {
+        font-size: 2.5rem;
+    }
+
     .info-cards-grid {
         grid-template-columns: 1fr;
     }
@@ -351,5 +368,16 @@
     .info-card-value {
         font-size: 12px;
         white-space: normal;
+    }
+
+    .about-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .about-actions .btn-primary,
+    .about-actions .btn-outline {
+        width: 100%;
+        justify-content: center;
     }
 }

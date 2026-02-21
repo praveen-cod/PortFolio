@@ -150,7 +150,29 @@
     padding-left: 24px;
 }
 
-@media (max-width: 1024px) {
+/* ── Responsive ── */
+
+/* XXL – 1400px+ & XL – 1200–1399px */
+@media (min-width: 1200px) {
+    .nav-container {
+        max-width: 1360px;
+    }
+}
+
+/* LG – 992–1199px */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .nav-links {
+        gap: 0px;
+    }
+
+    .nav-link {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}
+
+/* MD – 768–991px */
+@media (max-width: 991px) and (min-width: 768px) {
     .nav-links {
         display: none;
     }
@@ -161,5 +183,56 @@
 
     .menu-toggle {
         display: flex;
+    }
+}
+
+/* SM – 480–767px */
+@media (max-width: 767px) and (min-width: 480px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-container {
+        padding: 0 20px;
+    }
+}
+
+/* XS – 0–479px */
+@media (max-width: 479px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-container {
+        padding: 0 16px;
+        gap: 20px;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .logo-bracket {
+        font-size: 1.1rem;
+    }
+
+    .navbar {
+        padding: 16px 0;
     }
 }
