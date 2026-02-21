@@ -36,7 +36,7 @@ export default function Contact() {
         setLoading(true);
         setError('');
         try {
-            await axios.post('http://localhost:8080/api/contact', form);
+            await axios.post('http://localhost:4001/api/contact', form);
             setSuccess(true);
             setForm({ name: '', email: '', subject: '', message: '' });
         } catch (err) {

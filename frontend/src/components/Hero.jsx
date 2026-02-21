@@ -85,8 +85,8 @@ export default function Hero() {
                                 <span>View My Work</span>
                                 <span>🚀</span>
                             </a>
-                            <a href="#contact" className="btn-outline">
-                                <span>Get In Touch</span>
+                            <a href="/Resume_Praveen_K.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline">
+                                <span>View / Download Resume</span>
                             </a>
                         </motion.div>
 
