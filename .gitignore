@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -24,3 +25,23 @@ dist-ssr
 *.sw?
 
 .vercel
+=======
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# Backend
+backend/target/
+backend/*.class
+backend/uploads/
+
+# IDEs / OS
+.idea/
+.vscode/settings.json
+*.iml
+.DS_Store
+Thumbs.db
+*.log
+>>>>>>> 846bf9f0268c004ddd29cede9bf3aed01afa7668

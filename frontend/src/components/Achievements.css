@@ -1,0 +1,376 @@
+.ach-section {
+    position: relative;
+}
+
+.ach-grid-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+}
+
+.ach-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.ach-col-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ── Achievement Cards ── */
+.ach-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ach-card {
+    padding: 20px;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ach-card-award {
+    border-color: rgba(245, 158, 11, 0.2);
+}
+
+.ach-card-award:hover {
+    border-color: rgba(245, 158, 11, 0.5) !important;
+    box-shadow: 0 8px 32px rgba(245, 158, 11, 0.1) !important;
+}
+
+.ach-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.ach-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 13px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ach-text h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.ach-text p {
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* ── LeetCode Badge ── */
+.leetcode-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 14px;
+    background: rgba(255, 161, 22, 0.08);
+    border: 1px solid rgba(255, 161, 22, 0.3);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffa116;
+    text-decoration: none;
+    transition: all 0.3s;
+    width: fit-content;
+}
+
+.leetcode-badge:hover {
+    background: rgba(255, 161, 22, 0.15);
+    border-color: rgba(255, 161, 22, 0.6);
+    transform: translateX(3px);
+}
+
+/* ── Static Award Photo (Univ Rank) ── */
+.award-photo-slot {
+    margin-top: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 14px;
+}
+
+.award-photo-static {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 240px;
+    border: 2px solid rgba(245, 158, 11, 0.35);
+    background: rgba(245, 158, 11, 0.05);
+}
+
+.award-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.award-photo-static:hover .award-img {
+    transform: scale(1.04);
+}
+
+.award-static-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 20px 12px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #f1f5f9;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ── Cert Cards ── */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.cert-card {
+    padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.cert-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto;
+}
+
+.cert-icon {
+    font-size: 1.8rem;
+}
+
+.cert-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #cbd5e1;
+    line-height: 1.3;
+}
+
+.cert-issuer {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 50px;
+    border: 1px solid;
+    font-family: 'Fira Code', monospace;
+}
+
+/* ── Soft Skills ── */
+.soft-skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.soft-skill-card {
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.soft-skill-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.soft-skill-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #cbd5e1;
+    min-width: 120px;
+}
+
+.soft-skill-bar-track {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.soft-skill-bar-fill {
+    height: 100%;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #7c3aed99, #7c3aed);
+}
+
+/* ── Languages ── */
+.lang-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lang-card {
+    padding: 18px;
+}
+
+.lang-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.lang-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f1f5f9;
+}
+
+.lang-level {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Fira Code', monospace;
+}
+
+/* ── Responsive ── */
+
+/* XXL – 1400px+ */
+@media (min-width: 1400px) {
+    .ach-grid-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .ach-bottom {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+}
+
+/* XL – 1200–1399px */
+@media (max-width: 1399px) and (min-width: 1200px) {
+
+    .ach-grid-main,
+    .ach-bottom {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+/* LG – 992–1199px */
+@media (max-width: 1199px) and (min-width: 992px) {
+
+    .ach-grid-main,
+    .ach-bottom {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+/* MD – 768–991px */
+@media (max-width: 991px) and (min-width: 768px) {
+    .ach-grid-main {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .cert-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ach-bottom {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+}
+
+/* SM – 480–767px */
+@media (max-width: 767px) and (min-width: 480px) {
+    .ach-grid-main {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .cert-grid {
+        grid-template-columns: 1fr;
+        /* Stack certs on small mobiles */
+    }
+
+    .ach-bottom {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .award-photo-static {
+        height: 200px;
+    }
+}
+
+/* XS – 0–479px */
+@media (max-width: 479px) {
+    .ach-grid-main {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ach-bottom {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .award-photo-static {
+        height: 180px;
+    }
+
+    .ach-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 1.2rem;
+    }
+
+    .ach-card-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .soft-skill-name {
+        min-width: 90px;
+    }
+}
