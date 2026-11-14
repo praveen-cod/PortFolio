@@ -17,7 +17,7 @@ export const education = [
         degree: "Bachelor of Technology - Information Technology",
         institution: "Panimalar Engineering College",
         year: "2023 – 2027",
-        score: "CGPA: 8.87/10",
+        score: "CGPA: 8.89/10",
         color: "#7c3aed",
     },
     {
@@ -106,7 +106,7 @@ export const achievements = [
     },
     {
         id: "leetcode",
-        title: "260+ LeetCode Problems Solved",
+        title: "980+ LeetCode Problems Solved",
         description: "Solved 260+ Data Structures and Algorithms problems on LeetCode, demonstrating strong problem-solving skills.",
         color: "#ffa116",
         hasAwardPhoto: false,
