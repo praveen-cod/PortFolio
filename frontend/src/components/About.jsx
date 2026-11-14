@@ -5,7 +5,7 @@ import { personalInfo } from '../data/portfolioData';
 import './About.css';
 import { FiArrowRight, FiMapPin, FiMail, FiCode, FiAward } from 'react-icons/fi';
 import { SiLeetcode } from 'react-icons/si';
-import profileImg from '../assets/Profile.png';
+import profileImg from '../assets/Profile.jpg';
 
 export default function About() {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -21,8 +21,8 @@ export default function About() {
     const infoCards = [
         { icon: <FiMapPin />, label: 'Location', value: 'Chennai, Tamil Nadu', color: '#ec4899', href: null },
         { icon: <FiCode />, label: 'Focus', value: 'Flutter & Java Developer', color: '#7c3aed', href: null },
-        { icon: <FiAward />, label: 'CGPA', value: '8.87 / 10  |  3rd Rank', color: '#f59e0b', href: null },
-        { icon: <SiLeetcode size={16} />, label: 'LeetCode', value: '260+ Problems Solved', color: '#ffa116', href: personalInfo.leetcode },
+        { icon: <FiAward />, label: 'CGPA', value: '8.89 / 10  |  3rd Rank', color: '#f59e0b', href: null },
+        { icon: <SiLeetcode size={16} />, label: 'LeetCode', value: '980+ Problems Solved', color: '#ffa116', href: personalInfo.leetcode },
     ];
 
     return (
@@ -67,8 +67,8 @@ export default function About() {
                             {/* Quick Stats */}
                             <div className="profile-quick-stats">
                                 {[
-                                    { v: '8.87', l: 'CGPA' },
-                                    { v: '260+', l: 'LeetCode' },
+                                    { v: '8.89', l: 'CGPA' },
+                                    { v: '980+', l: 'LeetCode' },
                                     { v: '3rd', l: 'Univ. Rank' },
                                 ].map((s) => (
                                     <div key={s.l} className="quick-stat">
@@ -105,7 +105,7 @@ export default function About() {
                             animate={inView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.6, delay: 0.3 }}
                         >
-                            I'm a passionate <span className="hl">Information Technology undergraduate</span> at Panimalar Engineering College with a strong academic record of <span className="hl">8.87 CGPA</span> and a <span className="hl">University 3rd Rank</span> holder. My journey in tech is driven by curiosity and a love for solving complex problems.
+                            I'm a passionate <span className="hl">Information Technology undergraduate</span> at Panimalar Engineering College with a strong academic record of <span className="hl">8.89 CGPA</span> and a <span className="hl">University 3rd Rank</span> holder. My journey in tech is driven by curiosity and a love for solving complex problems.
                         </motion.p>
 
                         <motion.p
@@ -114,7 +114,7 @@ export default function About() {
                             animate={inView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.6, delay: 0.4 }}
                         >
-                            I specialize in <span className="hl">Flutter &amp; Dart</span> for mobile development and have a solid foundation in <span className="hl">Java and OOP principles</span>. I've competed in hackathons, earned university recognition, and solved <span className="hl">260+ DSA problems</span> on LeetCode.
+                            I specialize in <span className="hl">Flutter &amp; Dart</span> for mobile development and have a solid foundation in <span className="hl">Java and OOP principles</span>. I've competed in hackathons, earned university recognition, and solved <span className="hl">980+ DSA problems</span> on LeetCode.
                         </motion.p>
 
                         <motion.p

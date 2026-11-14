@@ -5,7 +5,7 @@ import './Hero.css';
 import { FiGithub, FiLinkedin, FiMail, FiPhone, FiArrowDown, FiZap, FiCpu } from 'react-icons/fi';
 import { SiLeetcode, SiFlutter } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
-import profileImg from '../assets/Profile.png';
+import profileImg from '../assets/Profile.jpg';
 
 const roles = personalInfo.roles;
 
@@ -107,8 +107,8 @@ export default function Hero() {
 
                         <motion.div variants={itemVariants} className="hero-stats">
                             {[
-                                { value: '8.87', suffix: '/10', label: 'CGPA' },
-                                { value: '260+', suffix: '', label: 'LeetCode' },
+                                { value: '8.89', suffix: '/10', label: 'CGPA' },
+                                { value: '980+', suffix: '', label: 'LeetCode' },
                                 { value: '3rd', suffix: '', label: 'Univ. Rank' },
                                 { value: '2+', suffix: '', label: 'Projects' },
                             ].map(s => (
@@ -156,7 +156,7 @@ export default function Hero() {
                         <motion.div className="float-card float-card-right"
                             animate={{ y: [0, 10, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}>
                             <span>💻</span>
-                            <div><p className="float-card-title">LeetCode</p><p className="float-card-sub">260+ Solved</p></div>
+                            <div><p className="float-card-title">LeetCode</p><p className="float-card-sub">980+ Solved</p></div>
                         </motion.div>
 
                         <motion.div className="float-card float-card-bottom"

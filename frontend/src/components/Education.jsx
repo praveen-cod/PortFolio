@@ -27,7 +27,7 @@ const fadeUp = {
 };
 
 const stats = [
-    { Icon: FiTarget, value: '8.87', label: 'Current CGPA', color: '#7c3aed' },
+    { Icon: FiTarget, value: '8.89', label: 'Current CGPA', color: '#7c3aed' },
     { Icon: FiCalendar, value: '2027', label: 'Graduation Year', color: '#06b6d4' },
     { Icon: FiCheckCircle, value: '4+', label: 'Certifications', color: '#f59e0b' },
     { Icon: FiAward, value: '3rd', label: 'University Rank', color: '#10b981' },
